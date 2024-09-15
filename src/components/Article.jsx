@@ -1,19 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Article = ({ title, body, tags, reactions, id }) => {
-  if (body && reactions) {
+const Article = ({ title, body, id }) => {
+  if (body) {
     return (
       <div className="article">
         <h2>{title}</h2>
         <p>{body}</p>
-        <div className="tags">
+        {/* <div className="tags">
           {tags.map((tag, index) => (
             <span key={index} className="tag">{tag} </span>
           ))}
         </div>
         <p><strong>Like:</strong> {reactions?.likes}</p>
-        <p><strong>Dislike:</strong> {reactions?.dislikes}</p>
+        <p><strong>Dislike:</strong> {reactions?.dislikes}</p> */}
         <hr />
       </div>
     );
@@ -21,13 +21,12 @@ const Article = ({ title, body, tags, reactions, id }) => {
     return (
       <div className="article">
         <h2>{title}</h2>
-        <div className="tags">
+        {/* <div className="tags">
           {tags.map((tag, index) => (
             <span key={index} className="tag">{tag} </span>
           ))}
-        </div>
+        </div> */}
         <Link to={`/blog/${id}`} className="btn">Lire la suite</Link>
-
         <hr />
       </div>
     );
